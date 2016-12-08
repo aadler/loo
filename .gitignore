@@ -15,3 +15,6 @@ vignettes/*.pdf
 inst/doc
 
 tests/testthat/Rplots.pdf
+
+*.o
+*.dll
