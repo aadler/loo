@@ -5,3 +5,7 @@ gpdfit_C <- function(x) {
     .Call('loo_gpdfit_C', PACKAGE = 'loo', x)
 }
 
+waic_c <- function(log_like) {
+    .Call('loo_waic_c', PACKAGE = 'loo', log_like)
+}
+
