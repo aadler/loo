@@ -33,8 +33,9 @@ totals <- function(pointwise) {
 #' @importFrom matrixStats colVars
 pointwise_waic <- function(log_lik, llfun = NULL, llargs = NULL) {
   if (!missing(log_lik)) {
-    lpd <- logColMeansExp(log_lik)
-    p_waic <- colVars(log_lik)
+    tmp <- waic_c(log_lik)
+    lpd <- tmp[,2]
+    p_waic <- tmp[,1]
   } else {
     if (is.null(llfun) || is.null(llargs))
       stop("Either 'log_lik' or 'llfun' and 'llargs' must be specified.",
